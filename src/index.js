@@ -12,9 +12,9 @@ ReactDOM.render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Categories} />
-      <Route path="/category/:categoryId" component={Category}>
-        <IndexRoute path="/games" component={Games} />
-        <Route path="/games/:gameId" component={Game} />
+      <Route path="categories/:categoryId" component={Category}>
+        <IndexRoute component={Games} />
+        <Route path="games/:gameId" component={Game} />
       </Route>
       <Route path="*" component={PageNotFound} />
     </Route>
