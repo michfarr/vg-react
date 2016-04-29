@@ -4,8 +4,9 @@ class AddGame extends React.Component {
 
   onSubmit(event){
     event.preventDefault();
-    var gameName = this.refs.gameInput.value;
-    this.props.onSubmit(gameName);
+    var gameTitle = this.refs.gameTitleInput.value;
+    var gameCover = this.refs.gameCoverInput.value;
+    this.props.onSubmit(gameTitle, gameCover);
   }
 
   render(){

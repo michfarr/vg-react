@@ -11,7 +11,7 @@ class AddCategory extends React.Component {
   render(){
     return(
       <form onSubmit={this.onSubmit.bind(this)}>
-        <input ref="categoryInput" placeholder="Category name..." />
+        <input type="text" ref="categoryInput" placeholder="Category name..." />
         <br />
         <button>Add Category</button>
       </form>
