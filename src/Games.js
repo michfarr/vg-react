@@ -32,7 +32,6 @@ class Games extends React.Component {
             category_id: this.props.params.categoryId
         };
 
-        // var newGames = this.state.games.concat(newGame);
         this.setState({
             game: newGame
         });
