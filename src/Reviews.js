@@ -70,11 +70,6 @@ class Reviews extends React.Component {
                     })}
 
                 </ul>
-                <hr />
-                // <div>
-                //     <p>Add new Review</p>
-                //     <AddReview onSubmit={this.onNewReview.bind(this)} />
-                // </div>
             </div>
         );
     }

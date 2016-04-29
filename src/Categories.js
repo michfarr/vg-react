@@ -30,7 +30,6 @@ class Categories extends React.Component {
             name: categoryName
         };
 
-        // var newCategories = this.state.categories.concat(newCategory);
         this.setState({
             category: newCategory
         });
