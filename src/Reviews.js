@@ -61,10 +61,14 @@ class Reviews extends React.Component {
                 <ul>
                     {this.state.reviews.map(function(review) {
                         return(
-                            <li key={review.id}>
-                            </li>
+                            <div>
+                            <li>{ review.reviewer_name }</li>
+                            <li>{ review.rating }</li>
+                            <li>{ review.comment }</li>
+                            </div>
                         );
                     })}
+
                 </ul>
                 <hr />
                 // <div>

@@ -33,6 +33,7 @@ class Game extends React.Component {
                     <p>{this.state.game.title}</p>
                     <img className="image" src={this.state.game.cover_image} />
                 </div>
+                {this.props.children}
             </div>
         );
     }
