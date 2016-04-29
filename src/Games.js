@@ -25,27 +25,27 @@ class Games extends React.Component {
         });
     }
 
-    onNewGame(gameTitle, coverImage){
-        var categoryId = this.props.params.categoryId
+    onNewGame(gameTitle, gameCover){
         var newGame = {
             title: gameTitle,
-            category_id: categoryId
+            cover_image: gameCover,
+            category_id: this.props.params.categoryId
         };
 
-        var newGames = this.state.games.concat(newGame);
+        // var newGames = this.state.games.concat(newGame);
         this.setState({
-            games: newGames
+            game: newGame
         });
 
-        this.saveGame(newGames);
+        this.saveGame(newGame);
     }
 
-    saveGame(newGames){
+    saveGame(newGame){
       jQuery.ajax({
         type: "POST",
         url: "https://arcane-fortress-98840.herokuapp.com/categories/"+this.props.params.categoryId+"/games.json",
         data: JSON.stringify({
-            games: newGames
+            game: newGame
         }),
         contentType: "application/json",
         dataType: "json"

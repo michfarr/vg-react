@@ -30,24 +30,30 @@ class Categories extends React.Component {
             name: categoryName
         };
 
-        var newCategories = this.state.categories.concat(newCategory);
+        // var newCategories = this.state.categories.concat(newCategory);
         this.setState({
-            categories: newCategories
+            category: newCategory
         });
 
-        this.saveCategory(newCategories);
+        this.saveCategory(newCategory);
     }
 
-    saveCategory(newCategories){
+    saveCategory(newCategory){
       jQuery.ajax({
         type: "POST",
         url: "https://arcane-fortress-98840.herokuapp.com/categories.json",
         data: JSON.stringify({
-            categories: newCategories
+            category: newCategory
         }),
         contentType: "application/json",
         dataType: "json"
       });
+    }
+
+    onSubmit(event){
+      event.preventDefault();
+      var categoryName = this.refs.categoryInput.value;
+      this.props.onSubmit(categoryName);
     }
 
     render() {
@@ -66,7 +72,11 @@ class Categories extends React.Component {
                 <hr />
                 <div>
                     <p>Add new Category:</p>
-                    <AddCategory onSubmit={this.onNewCategory.bind(this)} />
+                    <form onSubmit={this.onNewCategory.bind(this)}>
+                        <input type="text" ref="categoryInput" placeholder="Category name..." />
+                        <br />
+                        <button>Add Category</button>
+                    </form>
                 </div>
             </div>
         );
