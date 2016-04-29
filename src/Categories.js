@@ -16,7 +16,7 @@ class Categories extends React.Component {
 
   getCategories() {
     let component = this;
-    let url = "https://agile-escarpment-29274.herokuapp.com/categories.json";
+    let url = "https://arcane-fortress-98840.herokuapp.com/categories.json";
     jQuery.getJSON(url, function(data) {
       component.setState({
         categories: data.categories
@@ -25,21 +25,20 @@ class Categories extends React.Component {
   }
 
   render() {
-      return (
-        <div className="categories">
-          <h1>Categories</h1>
-
-          <ul>
-            {this.state.categories.map(function(category) {
-              return(
-                <li key={category.id}>
-                  <Link to={`/categories/${category_id}`}>{category.name}}</Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      );
+    return (
+      <div className="categories">
+        <h1>Categories!</h1>
+        <ul>
+          {this.state.categories.map(function(category) {
+            return(
+              <li key={category.id}>
+                <Link to={`/categories/${category.id}`}>{category.name}</Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
   }
 }
 
